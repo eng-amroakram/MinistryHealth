@@ -28,7 +28,7 @@ class EmployeeService extends Controller
         $employee = User::find($id);
         if ($data['password']) {
             $employee->update([
-                "employee_name" => $data['employee_name'],
+                "name" => $data['employee_name'],
                 "employee_number" => $data['employee_number'],
                 "id_number" => $data['id_number'],
                 "job_title" => $data['job_title'],
@@ -36,7 +36,7 @@ class EmployeeService extends Controller
             ]);
         } else {
             $employee->update([
-                "employee_name" => $data['employee_name'],
+                "name" => $data['employee_name'],
                 "employee_number" => $data['employee_number'],
                 "id_number" => $data['id_number'],
                 "job_title" => $data['job_title'],
