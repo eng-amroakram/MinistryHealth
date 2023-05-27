@@ -30,6 +30,11 @@ class PDFService extends Controller
             "daily_notes" => "daily_tours.pdf",
             "fire_sprinklers" => "fire_sprinklers.pdf",
             "fire_extinguishers" => "fire_extinguishers.pdf",
+
+            "warehouse" => "warehouse.pdf",
+            "generators" => "generators.pdf",
+            "refrigerants" => "refrigerants.pdf",
+            "boilers" => "boilers.pdf",
         ];
 
         $name = $nameFiles[$form->name];

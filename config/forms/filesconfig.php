@@ -6,6 +6,14 @@ return [
     "columns" => [
         "kitchen_inspection" => ["Count", "Question", "YES", "NO", "NA", "السؤال", "الترقيم"],
         "surface_inspection" => ["Count", "Question", "YES", "NO", "NA", "السؤال", "الترقيم"],
+
+        //New
+        "boilers" => ["Count", "Question", "YES", "NO", "NA", "السؤال", "الترقيم"],
+        "generators" => ["Count", "Question", "YES", "NO", "NA", "السؤال", "الترقيم"],
+        "warehouse" => ["NA", "NO", "YES", "السؤال", "الترقيم"],
+        "refrigerants" => ["Count", "Question", "YES", "NO", "NA", "السؤال", "الترقيم"],
+        //New
+
         "external_warehouses" => ["Count", "Question", "YES", "NO", "NA", "السؤال", "الترقيم"],
         "glass_breaker_fire_detectors" =>  ["Count", "Question", "YES", "NO", "NA", "السؤال", "الترقيم"],
         "staircase" => ["Count", "Question", "FM", "PM", "NM", "NA", "السؤال", "الترقيم"],

@@ -102,9 +102,17 @@
                                 'kitchen_inspection',
                                 'external_warehouses',
                                 'glass_breaker_fire_detectors',
+                                'boilers',
+                                'generators',
+                                'refrigerants',
                             ]))
                             <x-forms.surface_kit_ware_glass :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
                             </x-forms.surface_kit_ware_glass>
+                        @endif
+
+                        @if (in_array($form->name, ['warehouse']))
+                            <x-forms.warehouse :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.warehouse>
                         @endif
 
                         @if (in_array($form->name, ['staircase']))
@@ -263,16 +271,20 @@
 
                 });
 
-
                 $save.on('click', function() {
                     Livewire.emit('save', getContent());
+                    $data = [];
+                    $checkboxfield.prop('checked', false);
+                    $textfield.val("");
                 });
 
                 $tab.on("click", function() {
                     var $formid = $(this).attr('formid');
+                    $data = [];
+                    $checkboxfield.prop('checked', false);
+                    $textfield.val("");
                     @this.set("form_id", $formid)
                 });
-
             });
         </script>
     @endpush

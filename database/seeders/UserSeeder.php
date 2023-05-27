@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'id_number' => "",
             'job_title' => "مديرة النظام",
             'type' => 'superadmin',
-            'password' => Hash::make("123456"),
+            'password' => Hash::make("Aw1410"),
         ]);
 
         $employees = [
