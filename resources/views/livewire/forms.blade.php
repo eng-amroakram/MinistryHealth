@@ -1,56 +1,5 @@
 <section class="register-photo" style="background: rgb(255,255,255);padding: 0px;">
 
-    <style>
-        #divblure {
-            filter: blur(5px);
-            pointer-events: none;
-        }
-
-        .divblure {
-            filter: blur(5px);
-            pointer-events: none;
-        }
-
-        #loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        #divh1 {
-            position: absolute;
-            background-color: #28b596;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        #colora {
-            background: rgba(255, 255, 255, 0);
-            color: rgb(255, 255, 255);
-            font-weight: bold;
-        }
-
-        #stylea {
-            text-align: center;
-        }
-
-        #widht {
-            width: 80%;
-        }
-
-        #buttonstyle {
-            width: 15%;
-            float: left;
-            background: linear-gradient(94deg, #008bdc 0%, rgb(0, 195, 185) 23%, #00735b 100%);
-        }
-
-        .ulstyle {
-            background: linear-gradient(94deg, #008bdc 0%, rgb(0, 195, 185) 23%, #00735b 100%);
-        }
-    </style>
-
     <div class="container" style="margin-top: 20px; margin-bottom: 20px;" wire:ignore.self>
 
         <section class="register-photo"
@@ -119,11 +68,117 @@
             <div class="tab-content tabsdiv" wire:ignore.self>
                 @php
                     $stat = 0;
+                    $eye_wash = [
+                        '1' => ['7', 'دش الطوارئ', 'emergency_shower'],
+                        '7' => ['13', 'غسيل العيون', 'eye_wash'],
+                    ];
                 @endphp
 
                 @foreach ($forms as $form)
-                    <x-tab :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form" :count="1" :stat="$stat"></x-tab>
+                    <div class="tab-pane fade @if ($stat == 0) show active @endif  justify-content-lg-end {{ 'div' . $form->name }} "
+                        role="tabpanel" id="{{ $form->name }}" style="padding: 30px;" wire:ignore.self>
 
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <h6 style="text-align: right;">:الموقع</h6>
+                                <x-field type="text" dir="rtl" class="textfield w-100" name="location"
+                                    form="{{ $form->name }}" placeholder="ادخل الموقع" id=""> </x-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h6 style="text-align: right;">:المبنى</h6>
+                                <x-field type="text" dir="rtl" class="textfield w-100" name="building"
+                                    form="{{ $form->name }}" placeholder="ادخل المبنى" id=""> </x-field>
+                            </div>
+                        </div>
+
+                        @if ($form->name == 'emergency_shower_eye_wash')
+                            <x-forms.emergency_shower_eye_wash :form="$form" :eyewash="$eye_wash">
+                            </x-forms.emergency_shower_eye_wash>
+                        @endif
+
+                        @if (in_array($form->name, [
+                                'surface_inspection',
+                                'kitchen_inspection',
+                                'external_warehouses',
+                                'glass_breaker_fire_detectors',
+                            ]))
+                            <x-forms.surface_kit_ware_glass :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.surface_kit_ware_glass>
+                        @endif
+
+                        @if (in_array($form->name, ['staircase']))
+                            <x-forms.stairecase :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.stairecase>
+                        @endif
+
+                        @if (in_array($form->name, ['CO2', 'FM200']))
+                            <x-forms.co2_fm200 :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.co2_fm200>
+                        @endif
+
+                        @if (in_array($form->name, ['night_inspection_tour']))
+                            <x-forms.night_inspection_tour :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.night_inspection_tour>
+                        @endif
+
+                        @if (in_array($form->name, ['fire_sprinklers']))
+                            <x-forms.fire_sprinklers :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.fire_sprinklers>
+                        @endif
+
+                        @if (in_array($form->name, ['emergency_exits']))
+                            <x-forms.emergency_exits :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.emergency_exits>
+                        @endif
+
+                        @if (in_array($form->name, ['fire_blankets']))
+                            <x-forms.fire_blankets :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.fire_blankets>
+                        @endif
+
+                        @if (in_array($form->name, ['fire_hoses']))
+                            <x-forms.fire_hoses :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.fire_hoses>
+                        @endif
+
+                        @if (in_array($form->name, ['emergency_headlamps']))
+                            <x-forms.emergency_headlamps :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.emergency_headlamps>
+                        @endif
+
+                        @if (in_array($form->name, ['elevator_inspection']))
+                            <x-forms.elevator_inspection :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.elevator_inspection>
+                        @endif
+
+                        @if (in_array($form->name, ['fire_extinguishers']))
+                            <x-forms.fire_extinguishers :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.fire_extinguishers>
+                        @endif
+
+                        @if (in_array($form->name, ['direct_status_report']))
+                            <x-forms.direct_status_report :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.direct_status_report>
+                        @endif
+
+                        @if (in_array($form->name, ['daily_notes']))
+                            <x-forms.daily_notes :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.daily_notes>
+                        @endif
+
+                        <div>
+                            <h6 style="text-align: right;">:الملاحظات</h6>
+                            <textarea style="width: 100%;" dir="rtl" class="textfield" name="notes" id="{{ $form->name }}_notes"
+                                rows="3" placeholder="ادخل الحالة"></textarea>
+                        </div>
+
+                        <div>
+                            <x-button type="button" class="btn btn-success save" :buttontype="$form->name" id="buttonstyle"
+                                namebutton="حفظ البيانات"></x-button>
+                        </div>
+
+                    </div>
                     @php
                         $stat = 1;
                     @endphp
@@ -137,244 +192,86 @@
         </div>
     </div>
 
+
+    {{-- <x-tab :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form" :count="1" :stat="$stat"></x-tab> --}}
     @push('employee_script')
         <script>
             $(document).ready(function() {
+                var $data = [];
+                var $tab = $(".changetab");
+                var $textfield = $(".textfield");
+                var $checkboxfield = $(".checkboxfield");
+                var $selectfield = $(".selectfield");
+                var $save = $(".save");
 
-                var $formid = $(".changetab").attr('formid');
-                console.log($formid);
-                @this.set("form_id", $formid)
-                checkbox = $(".checkbox");
-                tab = $(".changetab");
-                var $textfields = [];
-                var $values = [];
-                var $comments = [];
-                var $mix = [];
+                function getContent() {
+                    var $object = Object.assign({}, $data);
+                    return JSON.stringify($object);
+                }
 
-                checkbox.on('change', function() {
-                    $box = $(this);
-                    $value = $box.attr("checkboxvalue");
-                    $type = $box.attr("checkboxtype");
-                    $check = $box.is(':checked');
-                    $form = $box.attr("form");
+                $checkboxfield.on('change', function() {
+                    //Init
+                    var $user_action = $(this);
+                    var $index = $data.indexOf($user_action.attr('name'));
+                    var $checked = $user_action.is(':checked');
+                    var $form_id = "." + $user_action.attr("form");
 
-                    function setCheckbox($form_name) {
+                    //Reset
+                    $($form_id).prop('checked', false);
+                    delete $data[$user_action.attr('revers')];
+                    delete $data[$user_action.attr('reversone')];
+                    delete $data[$user_action.attr('reverstwo')];
+                    delete $data[$user_action.attr('reversthree')];
 
-                        if (!($values[$value] === undefined)) {
-                            $che = "#" + $form_name + "_" + $values[$value];
-                            console.log($che);
-                            $($che).prop('checked', false);
-                            $($che).prop('checked', false);
-                            delete $values[$value];
-                        }
 
-                        if ($check) {
-                            $values[$value] = $type + "_" + $value;
-                        } else {
-                            delete $values[$value];
-                        }
+                    //Print
+                    console.log($user_action.attr('reversone'));
+                    console.log($user_action.attr('reverstwo'));
 
-                        $comments[0] = $values;
-                        return $values
-                    }
 
-                    $result = setCheckbox($form);
-                    console.log($result);
-
-                });
-
-                $(".inputdata").on('input', function() {
-                    $box = $(this);
-                    $type = $box.attr("typefield");
-                    $count = $box.attr("count");
-                    $value = $box.val();
-
-                    if ($value) {
-                        $textfields[$type] = $value;
+                    //Process
+                    if ($checked) {
+                        $user_action.prop('checked', true);
+                        $data[$user_action.attr('name')] = "✓";
                     } else {
-                        $textfields[$type] = $value;
-                    }
-
-                    console.log($textfields);
-                });
-
-                Livewire.on("refreshFroms", function() {
-                    $('.checkbox').prop('checked', false);
-                    $('.inputdata').val("");
-                    $('.comments').val("");
-                    $('.comments_location').val("");
-
-                    $values = [];
-                    $textfields = [];
-                    $comments = [];
-                    $mix = [];
-                });
-
-                $(".save").on('click', function() {
-                    $button = $(this).attr("buttontype");
-
-                    function getContent($data) {
-                        $data['location'] = $textfields['location'];
-                        $data['building'] = $textfields['building'];
-                        var $object = Object.assign({}, $data);
-                        var $json = JSON.stringify($object);
-                        return $json;
-                    }
-
-                    if ($button == "surface_inspection") {
-                        var $var = getContent($values);
-                        Livewire.emit('save', $var);
-                    }
-
-                    if ($button == "external_warehouses") {
-                        var $var = getContent($values);
-                        Livewire.emit('save', $var);
-                    }
-
-                    if ($button == "kitchen_inspection") {
-                        var $var = getContent($values);
-                        Livewire.emit('save', $var);
-                    }
-
-                    if ($button == "staircase") {
-                        var $var = getContent($values);
-                        Livewire.emit('save', $var);
-                    }
-
-                    if ($button == "glass_breaker_fire_detectors") {
-                        var $var = getContent($values);
-                        Livewire.emit('save', $var);
-                    }
-
-                    if ($button == "CO2") {
-                        var $var = getContent($comments);
-                        Livewire.emit('saveco2', $var);
-                    }
-
-                    if ($button == "FM200") {
-                        var $data = getContent($comments);
-                        Livewire.emit('savefm200', $data);
-                    }
-
-                    if ($button == "emergency_exits") {
-                        var $data = getContent($textfields);
-                        Livewire.emit('emergency_exits', $data);
-                    }
-
-                    if ($button == "fire_blankets") {
-                        var $data = getContent($comments);
-                        Livewire.emit('fire_blankets', $data);
-                    }
-
-                    if ($button == "fire_hoses") {
-                        var $data = getContent($comments);
-                        Livewire.emit('fire_hoses', $data);
-                    }
-
-                    if ($button == "emergency_headlamps") {
-                        var $data = getContent($comments);
-                        Livewire.emit('emergency_headlamps', $data);
-                    }
-
-                    if ($button == "elevator_inspection") {
-                        var $data = getContent($textfields);
-                        Livewire.emit('elevator_inspection', $data);
-                    }
-
-                    if ($button == "emergency_shower_eye_wash") {
-                        var $data = getContent($comments);
-                        Livewire.emit('emergency_shower_eye_wash', $data);
-                    }
-
-                    if ($button == "daily_notes") {
-                        var $data = getContent($textfields);
-                        Livewire.emit('daily_notes', $data);
-                    }
-
-                    if ($button == "direct_status_report") {
-                        var $data = getContent($textfields);
-                        Livewire.emit('direct_status_report', $data);
-                    }
-
-                    if ($button == "night_inspection_tour") {
-                        var $data = getContent($textfields);
-                        Livewire.emit('night_inspection_tour', $data);
-                    }
-
-                    if ($button == "fire_sprinklers") {
-                        var $json = getContent($textfields);
-                        Livewire.emit('fire_sprinklers', $json);
-                    }
-
-                    if ($button == "fire_extinguishers") {
-                        var $json = getContent($comments);
-                        Livewire.emit('fire_extinguishers', $json);
+                        delete $data[$user_action.attr('name')];
+                        $user_action.prop('checked', false);
                     }
 
                 });
 
-                tab.on("click", function() {
-                    $('.checkbox').prop('checked', false);
-                    $('.inputdata').val("");
-                    $('.comments').val("");
-                    $('.comments_location').val("");
-                    $values = [];
-                    $textfields = [];
-                    $comments = [];
-                    $mix = [];
-                });
+                $textfield.on('input', function() {
+                    var $user_action = $(this);
+                    var $index = $data.indexOf($user_action.attr('name'));
 
-                $(".comments").on("input", function() {
-                    $box = $(this);
-                    $value = $box.val();
-                    $type = $box.attr("typefield");
-                    $question_1 = $box.attr("count");
-
-                    if ($value) {
-                        $comments[$type] = $value;
+                    if ($user_action.val()) {
+                        $data[$user_action.attr('name')] = $user_action.val();
                     } else {
-                        $comments[$type] = $value;
+                        delete $data[$user_action.attr('name')];
                     }
-                    console.log($comments);
                 });
 
-                $(".comments_location").on("input", function() {
-                    $box = $(this);
-                    $value = $box.val();
-                    $type = $box.attr("typefield");
-                    $question_1 = $box.attr("count");
+                $selectfield.on('change', function() {
+                    var $user_action = $(this);
+                    var $index = $data.indexOf($user_action.attr('name'));
 
-                    if ($value) {
-                        $comments[$type] = $value;
-                        $mix[1] = $comments;
+                    if ($user_action.val()) {
+                        $data[$user_action.attr('name')] = $user_action.val();
                     } else {
-                        $comments[$type] = $value;
+                        delete $data[$user_action.attr('name')];
                     }
+
                 });
 
-                $(".changetab").on("click", function() {
+
+                $save.on('click', function() {
+                    Livewire.emit('save', getContent());
+                });
+
+                $tab.on("click", function() {
                     var $formid = $(this).attr('formid');
                     @this.set("form_id", $formid)
                 });
-
-                $(".checkboxv2").on("click", function() {
-                    $box = $(this);
-                    $value = $box.attr("checkboxvalue");
-                    $type = $box.attr("checkboxtype");
-                    $check = $box.is(':checked');
-                    $form = $box.attr("form");
-
-                    var $enter = $type + "_" + $value;
-
-                    if ($check) {
-                        $comments[$enter] = "✔️";
-                    } else {
-                        $comments[$enter] = "❌";
-                    }
-                    console.log($comments);
-                });
-
-
 
             });
         </script>

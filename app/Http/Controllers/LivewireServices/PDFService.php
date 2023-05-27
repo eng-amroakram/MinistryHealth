@@ -31,7 +31,6 @@ class PDFService extends Controller
             "fire_extinguishers" => "fire_extinguishers.pdf",
         ];
 
-
         $name = $nameFiles[$form->name];
 
         $original_pdf = public_path() . '/pdfs/' . $name;

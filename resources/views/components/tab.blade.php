@@ -1,214 +1,24 @@
 <div class="tab-pane fade @if ($stat == 0) show active @endif  justify-content-lg-end {{ 'div' . $form->name }} "
     role="tabpanel" id="{{ $form->name }}" style="padding: 30px;" wire:ignore.self>
 
-    <style>
-        #tdstyleright {
-            font-weight: bold;
-            text-align: right;
-        }
-
-        #tdstylecenter {
-            font-weight: bold;
-            text-align: center;
-        }
-
-        #tdstyleleft {
-            font-weight: bold;
-            text-align: left;
-        }
-    </style>
-
-    @if ($form->name == 'emergency_shower_eye_wash')
-
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <h6 style="text-align: right;">:الموقع</h6>
-                <input type="text" dir="rtl" class="inputdata w-100" typefield="location" name="location"
-                    id="location" placeholder="ادخل الموقع" />
-            </div>
-
-            <div class="col-md-6">
-                <h6 style="text-align: right;">:المبنى</h6>
-                <input dir="rtl" class="inputdata w-100" typefield="building" name="building" id="building"
-                    placeholder="ادخل المبنى" />
-            </div>
-        </div>
-        @php
-            $try = [
-                '1' => ['7', 'دش الطوارئ', 'emergency_shower'],
-                '7' => ['13', 'غسيل العيون', 'eye_wash'],
-            ];
-        @endphp
-
-        @foreach ($try as $count => $array)
-            <div style="width: 100%;" wire:ignore.self>
-                <div class="table-responsive text-center" style="width: 100%; border-color: rgb(0,0,0);"
-                    wire:ignore.self>
-
-                    <h3 style="text-align: right;">{{ $array[1] }}</h3>
-
-                    <table class="table table-bordered" wire:ignore.self>
-                        <thead>
-                            <tr>
-                                @foreach ($colmuns as $colmun)
-                                    <th class="table-success">{{ $colmun }}</th>
-                                @endforeach
-
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            @if (in_array($form->name, ['emergency_shower_eye_wash']))
-                                @while ($count < $array[0])
-                                    <tr>
-                                        <td>
-                                            <input type="text" dir="rtl" class="comments"
-                                                typefield="comment_{{ $count }}" id="widht"
-                                                count="{{ $count }}">
-                                        </td>
-
-                                        <td>
-                                            <input type="checkbox" class="checkbox" form="{{ $form->name }}"
-                                                id="{{ $form->name }}_un_{{ $count }}" checkboxtype="un"
-                                                checkboxvalue="{{ $count }}">
-                                        </td>
-
-                                        <td>
-                                            <input type="checkbox" class="checkbox" form="{{ $form->name }}"
-                                                id="{{ $form->name }}_sat_{{ $count }}" checkboxtype="sat"
-                                                checkboxvalue="{{ $count }}">
-                                        </td>
-
-
-                                        <td>
-                                            <input type="text" dir="rtl" class="comments"
-                                                typefield="location_{{ $count }}" id="widht"
-                                                count="{{ $count }}">
-                                        </td>
-                                        <td>{{ $count }}</td>
-                                    </tr>
-
-                                    @php
-                                        $count = $count + 1;
-                                    @endphp
-                                @endwhile
-                            @endif
-
-                        </tbody>
-                    </table>
-
-                </div>
-
-            </div>
-        @endforeach
 
 
 
 
-        <div>
-            <button type="button" class="btn btn-success save" buttontype="{{ $form->name }}" id="buttonstyle">حفظ
-                البيانات</button>
-        </div>
-    @endif
-
-    @if (in_array($form->name, ['daily_notes']))
-
-        <h3 style="text-align: right;">{{ __($form->name) }}</h3>
-
-        @php
-            $counter = 1;
-        @endphp
-        @foreach ([0, 1, 2, 3] as $max)
-            @if ($max != 0)
-                <div>
-                    <h6 style="text-align: right;">:رئيس القسم</h6>
-                    <input style="width: 100%;" class="inputdata" typefield="head_department_{{ $max }}"
-                        id="widht" count="{{ $max }}" dir="rtl" placeholder="رئيس القسم" />
-
-                </div>
-            @endif
-
-            <div style="width: 100%;" wire:ignore.self>
-                <div class="table-responsive text-center" style="width: 100%; border-color: rgb(0,0,0);"
-                    wire:ignore.self>
-                    <table class="table table-bordered" wire:ignore.self>
-                        <thead>
-                            <tr>
-                                @foreach ($colmuns as $colmun)
-                                    <th class="table-success">{{ $colmun }}</th>
-                                @endforeach
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            @php
-                                $count = 1;
-                            @endphp
-
-                            @while ($count < 4)
-                                <tr>
-                                    <td>
-                                        <input type="text" dir="rtl" class="inputdata"
-                                            typefield="work_order_number_{{ $counter }}" id="widht"
-                                            count="{{ $counter }}">
-                                    </td>
-
-                                    <td>
-                                        <input type="text" dir="rtl" class="inputdata"
-                                            typefield="location_{{ $counter }}" id="widht"
-                                            count="{{ $counter }}">
-                                    </td>
-
-                                    <td>
-                                        <input type="text" dir="rtl" class="inputdata"
-                                            typefield="comment_{{ $counter }}" id="widht"
-                                            count="{{ $counter }}">
-                                    </td>
-                                    <td>{{ $count }}</td>
-                                </tr>
-
-                                @php
-                                    $count = $count + 1;
-                                    $counter = $counter + 1;
-                                @endphp
-                            @endwhile
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        @endforeach
-
-        <div class="row mb-3">
-
-            <div class="col-md-6">
-                <h6 style="text-align: right;">:مراقب السلامة</h6>
-                <input type="text" dir="rtl" class="inputdata w-100" typefield="safety_monitor" id="widht">
-            </div>
-
-            <div class="col-md-6">
-                <h6 style="text-align: right;">:رئيس قسم السلامة</h6>
-                <input dir="rtl" class="inputdata w-100" typefield="head_safety_department" id="widht" />
-            </div>
-        </div>
-
-        <div>
-            <h6 style="text-align: right;">:الملاحظات</h6>
-            <textarea class="inputdata w-100" typefield="notes" id="widht" rows="3"></textarea>
-        </div>
 
 
-        <div>
-            <button type="button" class="btn btn-success save" buttontype="{{ $form->name }}"
-                id="buttonstyle">حفظ البيانات
-            </button>
-        </div>
 
-    @endif
+
+
+
+
+
+
 
     @if (!in_array($form->name, ['daily_notes', 'emergency_shower_eye_wash']))
+
         <div style="width: 100%;" wire:ignore.self>
+
             @if (!in_array($form->name, ['direct_status_report', 'daily_notes', 'night_inspection_tour', 'fire_extinguishers']))
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -224,6 +34,24 @@
                     </div>
                 </div>
             @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <div class="table-responsive text-center" style="width: 100%; border-color: rgb(0,0,0);" wire:ignore.self>
 
@@ -246,6 +74,7 @@
                         @endphp
 
                         @foreach ($form->questions as $question)
+
                             @if (in_array($form->name, [
                                     'surface_inspection',
                                     'kitchen_inspection',
@@ -311,6 +140,10 @@
                                 </tr>
                             @endif
 
+
+
+
+
                             @if (in_array($form->name, ['CO2', 'FM200']))
                                 <tr>
                                     <td>{{ $count }}</td>
@@ -338,6 +171,9 @@
                                     <td>{{ $count }}</td>
                                 </tr>
                             @endif
+
+
+
 
                             @if (in_array($form->name, ['night_inspection_tour']))
                                 <tr>
@@ -389,6 +225,16 @@
                                 $count = $count + 1;
                             @endphp
                         @endforeach
+
+
+
+
+
+
+
+
+
+
 
                         @if (in_array($form->name, ['emergency_exits']))
                             @while ($count < 19)
@@ -783,5 +629,9 @@
         </div>
 
     @endif
+
+
+
+
 
 </div>

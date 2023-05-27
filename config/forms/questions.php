@@ -10,7 +10,7 @@ return [
             "Fire Alarm, Smoke/Heat Detectors Sprinkler System are in good condition" => "أنظمة الإنذار، أنظمة استشعار الدخان/ الحرارة، رشاشات الإطفاء بحالة جيدة",
             "Fire alarm break glass call point is in good condition" => "نظام الإنذار بكسر الزجاج بحالة جيدة",
             "Fire doors clearly marked with directive signs" => "أبواب المخارج واضحة ويوجد لوحات ارشادية تدل عليها",
-            "No smoking signs are posted" => "لوحات ممنوع التدخين معلقة",
+            "No smoking signs are posted" => "وجود ملصقات ممنوع التدخين",
             "Fire doors and exits close and the lock work properly" => "أبواب ومخارج الطوارئ مغلقة والدفاشات تعمل بالشكل المطلوب",
             "The PPM for fire suppression system is done and the report is included" => "تم عمل الصيانة الوقائية لنظام إطفاء الزيوت وتم ارفاق التقرير",
             "Exhaust fan for steam and gases and the air ducts in good condition and cleaned periodically" => "مراوح شفط الابخرة والغازات ومجاري الهواء تعمل بحالة جيدة ويتم تنظيفها بشكل دوري",
@@ -43,7 +43,7 @@ return [
             "Electrical cables/wires trays  covered" =>    "رفوف الاسلاك / الكيابل الكهربائية مغطاة",
             "Electrical outlets sufficient" => "المخارج الكهربائية كافية",
             "Emergency lighting system is operable"    => "إضاءة الطوارئ تعمل",
-            "Fire alarm break glass call point in good condition" => "نظام الإنذار بكسر الزجاج",
+            "Fire alarm break glass call point in good condition" => "نظام اإلنذار بكسر الزجاج بحالة جيدة",
             "Sprinklers Test Valves are in good condition" => "محبس اختبار أنظمة الرشاشات بحالة جيدة",
             "Fire extinguishers are inspected" => "الطفايات تم فحصها",
             "Fire Hose cabinets are inspected" => "خرطوم الحريق تم فحصه",
@@ -53,7 +53,7 @@ return [
             "Chemicals stored in closed containers" => "المواد الكيميائية مخزنة في اوعيه محكمة الإغلاق",
             "Chemical containers are clearly labeled" => "اوعية المواد الكيميائية عليها ملصقات واضحة",
             "Personnel instructed not to move chemicals to store" => "الموظفون تم ابلاغهم بنقل المواد الكيميائية الى المستودع الخاص بها",
-            "No smoking signs are posted" =>  "لوحات ممنوع التدخين ملصقة على الحائط",
+            "No smoking signs are posted" =>  "وجود ملصقات ممنوع التدخين",
             "No cigarette buttes" =>  "لا يوجد اعقاب سجائر",
         ],
 
@@ -87,15 +87,15 @@ return [
             "Electrical cables/wires trays  covered" =>                "رفوف الاسلاك / الكيابل الكهربائية مغطاة",
             "Electrical outlets sufficient" => "المخارج الكهربائية كافية",
             "Emergency lighting system is operable" => "إضاءة الطوارئ تعمل",
-            "Fire alarm break glass call point in good condition" => "نظام الإنذار بكسر الزجاج",
+            "Glass break alarm system is in good condition" => "نظام اإلنذار بكسر الزجاج بحالة جيدة",
             "Sprinklers Test Valves are in good condition" => "محبس اختبار أنظمة الرشاشات بحالة جيدة",
             "Fire extinguishers are inspected" => "الطفايات تم فحصها",
             "Accommodate on-site storage" => "استيعاب التخزين في الموقع",
             "Telephones are available" => "التليفونات متوفرة",
             "Hazardous materials used" => "توجد مواد خطرة مستخدمة",
             "Hazardous materials stored properly" => "المواد الخطرة مخزنة بطريقة جيدة",
-            "Fire extinguishers are provided" =>                  "تم تزويد الموقع بطفايات إضافية",
-            "No smoking signs are posted" => "لوحات ممنوع التدخين ملصقة على الحائط",
+            "Fire extinguishers are provided" => "تم تزويد الموقع بطفايات إضافية",
+            "No smoking signs are posted" => "وجود ملصقات ممنوع التدخين",
             "No cigarette buttes" =>  "لا يوجد اعقاب سجائر",
         ],
 
@@ -129,7 +129,7 @@ return [
 
         "fire_sprinklers" => [
             "Water Pressure at highest point at network" => "وﺿﻊ اﻟرﺷﺎﺷﺎت",
-            "Leakage" => "التسريب",
+            "Leakage" => "هل يوجد ترسيب",
             "Rust" => "الصدأ"
         ],
 

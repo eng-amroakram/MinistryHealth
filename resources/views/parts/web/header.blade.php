@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/fonts/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/forms.css') }}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&amp;display=swap">

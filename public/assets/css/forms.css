@@ -1,0 +1,65 @@
+
+#divblure {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+.divblure {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#divh1 {
+    position: absolute;
+    background-color: #28b596;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#colora {
+    background: rgba(255, 255, 255, 0);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+#stylea {
+    text-align: center;
+}
+
+#widht {
+    width: 80%;
+}
+
+#buttonstyle {
+    width: 15%;
+    float: left;
+    background: linear-gradient(94deg, #008bdc 0%, rgb(0, 195, 185) 23%, #00735b 100%);
+}
+
+.ulstyle {
+    background: linear-gradient(94deg, #008bdc 0%, rgb(0, 195, 185) 23%, #00735b 100%);
+}
+
+
+#tdstyleright {
+    font-weight: bold;
+    text-align: right;
+}
+
+#tdstylecenter {
+    font-weight: bold;
+    text-align: center;
+}
+
+#tdstyleleft {
+    font-weight: bold;
+    text-align: left;
+}

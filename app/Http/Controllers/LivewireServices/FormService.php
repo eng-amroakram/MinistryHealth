@@ -12,6 +12,7 @@ class FormService extends Controller
         $user = auth()->user();
         $solution['name_ar'] = $user->name;
         $solution['inspector_name'] = $user->name;
+        $solution['date'] = now()->format('Y-m-d');
 
         Answer::create([
             'user_id' => $user->id,

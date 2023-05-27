@@ -98,6 +98,8 @@
     "Pressure gauges are in operable range": "مقاييس الضغط تعمل بالصورة المطلوبة",
     "The system cable is plugged in": "كيبل أسطوانة النظام موصول بالكهرباء",
     "The temperature of the place is suitable (Major- Minor)": "درجة حرارةالمكان مناسبة (الكبرى -الصغرى)",
+    "Extinguishing system components are in their proper locations": "النظام في المكان المناسب",
+    "No equipment has been added or existing equipment moved": "لا يوجدأجهزة أضيفت أو أجهزة نقلت",
     "exits": "المخارج",
     "basement": "بدروم",
     "ground_floor": "الدور الأرضي",
@@ -111,4 +113,5 @@
     "Water Pressure at highest point at network": "وﺿﻊ اﻟرﺷﺎﺷﺎت",
     "Leakage": "التسريب",
     "Rust": "الصدأ"
+
 }
