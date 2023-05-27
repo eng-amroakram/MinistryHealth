@@ -9,6 +9,7 @@ class PDFService extends Controller
 {
     public function fillPdf($fillable = [], $form)
     {
+
         $nameFiles = [
             "kitchen_inspection" => "kitchen_inspection.pdf",
             "surface_inspection" => "surface_inspection.pdf",

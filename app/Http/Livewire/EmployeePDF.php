@@ -30,7 +30,9 @@ class EmployeePDF extends Component
         $answer = $this->answers->where('id', $id)->first();
 
         $pdfService = new PDFService();
-        $name = $pdfService->fillPdf($answer->solutions, $answer->form);
+        $data = $answer->solutions;
+        $data['date'] = $answer->created_at->format("Y-m-d");
+        $name = $pdfService->fillPdf($data, $answer->form);
 
         $path = 'pdf-viewer/web/viewer.html?file=pdfs/' . $name;
         $this->pdf_path = asset($path);
