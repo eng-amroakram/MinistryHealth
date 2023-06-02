@@ -27,7 +27,7 @@
                     <td>
                         <x-field type="checkbox" dir=""
                             class="checkboxfield {{ $form->name }}_{{ $count }}"
-                            name="_un_{{ $count }}" revers="sat_{{ $count }}"
+                            name="un_{{ $count }}" revers="sat_{{ $count }}"
                             form="{{ $form->name }}_{{ $count }}"
                             id="{{ $form->name }}_un_{{ $count }}" placeholder="">
                         </x-field>
@@ -36,7 +36,7 @@
                     <td>
                         <x-field type="checkbox" dir=""
                             class="checkboxfield {{ $form->name }}_{{ $count }}"
-                            name="_sat_{{ $count }}" revers="un_{{ $count }}"
+                            name="sat_{{ $count }}" revers="un_{{ $count }}"
                             form="{{ $form->name }}_{{ $count }}"
                             id="{{ $form->name }}_sat_{{ $count }}" placeholder="">
                         </x-field>

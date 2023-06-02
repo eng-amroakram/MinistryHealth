@@ -17,12 +17,13 @@
                     <td>{{ $count }}</td>
                     <td id="tdstylecenter">{{ $question->question }}</td>
                     <td>
+
                         <select class="selectfield" form="{{ $form->name }}"
                             id="{{ $form->name }}_status_{{ $count }}"name="status_{{ $count }}"
                             id="status_{{ $count }}">
                             <option value="">لا شيء</option>
-                            <option value="جيد">جيد</option>
-                            <option value="غير جيد">غير جيد</option>
+                            <option value="يوجد">يوجد</option>
+                            <option value="لا يوجد">لا يوجد</option>
                         </select>
 
                     </td>
