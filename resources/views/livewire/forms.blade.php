@@ -283,7 +283,7 @@
                     $data = [];
                     $checkboxfield.prop('checked', false);
                     $textfield.val("");
-                    @this.set("form_id", $formid)
+                    @this.set("form_id", $formid);
                 });
             });
         </script>
@@ -291,3 +291,6 @@
 
 
 </section>
+
+
+

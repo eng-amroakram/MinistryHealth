@@ -58,6 +58,7 @@ class Forms extends Component
         $formService->store($data, $this->form_id, $this->notes);
         $this->alertComponent();
         $this->emit("refreshFroms");
+        return redirect()->route('web.forms');
     }
 
     public function changeFormType($type)
