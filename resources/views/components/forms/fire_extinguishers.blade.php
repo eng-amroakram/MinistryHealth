@@ -90,6 +90,7 @@
                     <td>
                         <select class="selectfield" form="{{ $form->name }}" name="capacity_{{ $count }}"
                             id="{{ $form->name }}_capacity_{{ $count }}" id="capacity_{{ $count }}">
+                            <option value="">لا شيء</option>
                             <option value="6 Kg">6 Kg</option>
                             <option value="4 Kg">4 Kg</option>
                             <option value="2 Kg">2 Kg</option>
@@ -99,6 +100,7 @@
                     <td>
                         <select class="selectfield" form="{{ $form->name }}" name="type_{{ $count }}"
                             id="{{ $form->name }}_type_{{ $count }}" id="type_{{ $count }}">
+                            <option value="">لا شيء</option>
                             <option value="co2">co2</option>
                             <option value="بودره">بودره</option>
                             <option value="زيتية">زيتية</option>
