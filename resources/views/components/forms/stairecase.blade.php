@@ -1,4 +1,11 @@
 <div class="table-responsive text-center" style="width: 100%; border-color: rgb(0,0,0);" wire:ignore.self>
+    <div class="d-flex justify-content-center">
+        <strong>NA:</strong><span style="font-size: large; margin-right: 20px;"> Not Applicable</span>
+        <strong>NM:</strong><span style="font-size: large; margin-right: 20px;"> Not Met</span>
+        <strong>PM:</strong><span style="font-size: large; margin-right: 20px;"> Partially Met</span>
+        <strong>FM:</strong><span style="font-size: large; margin-right: 20px;"> Fully Met</span>
+    </div>
+
     <h3 style="text-align: right;">{{ __($form->name) }}</h3>
     <table class="table table-bordered" wire:ignore.self>
         <thead>
