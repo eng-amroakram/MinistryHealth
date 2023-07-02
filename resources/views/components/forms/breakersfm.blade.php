@@ -12,7 +12,7 @@
             @php
                 $count = 1;
             @endphp
-            @while ($count < 15)
+            @while ($count < 12)
                 <tr>
                     <td>
                         <x-field type="text" dir="rtl" class="textfield" name="comment_{{ $count }}"
@@ -41,7 +41,6 @@
                             placeholder="">
                         </x-field>
                     </td>
-
                     <td>{{ $count }}</td>
                 </tr>
 

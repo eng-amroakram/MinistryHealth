@@ -12,6 +12,7 @@
             @php
                 $count = 1;
             @endphp
+
             @foreach ($form->questions as $question)
                 <tr>
                     <td>{{ $count }}</td>
@@ -22,8 +23,14 @@
                             id="{{ $form->name }}_status_{{ $count }}"name="status_{{ $count }}"
                             id="status_{{ $count }}">
                             <option value="">لا شيء</option>
-                            <option value="يوجد">يوجد</option>
-                            <option value="لا يوجد">لا يوجد</option>
+                            <option
+                                value="{{ $question->question == 'Water Pressure at highest point at network' ? 'سليم' : 'يوجد' }}">
+                                {{ $question->question == 'Water Pressure at highest point at network' ? 'سليم' : 'يوجد' }}
+                            </option>
+                            <option
+                                value="{{ $question->question == 'Water Pressure at highest point at network' ? 'غير سليم' : 'لا يوجد' }}">
+                                {{ $question->question == 'Water Pressure at highest point at network' ? 'غير سليم' : 'لا يوجد' }}
+                            </option>
                         </select>
 
                     </td>

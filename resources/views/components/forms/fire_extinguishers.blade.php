@@ -91,6 +91,10 @@
                         <select class="selectfield" form="{{ $form->name }}" name="capacity_{{ $count }}"
                             id="{{ $form->name }}_capacity_{{ $count }}" id="capacity_{{ $count }}">
                             <option value="">لا شيء</option>
+                            <option value="50 Kg">50 Kg</option>
+                            <option value="25 Kg">25 Kg</option>
+                            <option value="15 Kg">15 Kg</option>
+                            <option value="10 Kg">10 Kg</option>
                             <option value="6 Kg">6 Kg</option>
                             <option value="4 Kg">4 Kg</option>
                             <option value="2 Kg">2 Kg</option>

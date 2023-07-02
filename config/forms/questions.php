@@ -128,7 +128,7 @@ return [
         ],
 
         "fire_sprinklers" => [
-            "Water Pressure at highest point at network" => "وﺿﻊ اﻟرﺷﺎﺷﺎت",
+            // "Water Pressure at highest point at network" => "وﺿﻊ اﻟرﺷﺎﺷﺎت",
             "Leakage" => "هل يوجد ترسيب",
             "Rust" => "الصدأ"
         ],
@@ -250,6 +250,7 @@ return [
             "Ladders are in good condition" =>  "السلالم المستخدمة بحالة جيدة",
         ],
 
+        "breakersfm" => [],
         "emergency_headlamps" => [],
         "elevator_inspection" => [],
         "emergency_exits" => [],

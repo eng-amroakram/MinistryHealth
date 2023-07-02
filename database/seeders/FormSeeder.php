@@ -32,6 +32,7 @@ class FormSeeder extends Seeder
                         'created_at' => now()
                     ]);
                 }
+
                 $count = $count + 1;
             }
         }

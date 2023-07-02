@@ -145,10 +145,16 @@
                             </x-forms.fire_blankets>
                         @endif
 
+                        @if (in_array($form->name, ['breakersfm']))
+                            <x-forms.breakersfm :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
+                            </x-forms.breakersfm>
+                        @endif
+
                         @if (in_array($form->name, ['fire_hoses']))
                             <x-forms.fire_hoses :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
                             </x-forms.fire_hoses>
                         @endif
+
 
                         @if (in_array($form->name, ['emergency_headlamps']))
                             <x-forms.emergency_headlamps :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">

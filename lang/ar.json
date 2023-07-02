@@ -145,5 +145,11 @@
     "boilers": "الغلايات",
     "generators": "المولدات",
     "warehouse": "المستودع",
-    "refrigerants": "المبردات"
+    "refrigerants": "المبردات",
+    "Ladders are in good condition": "السلالم المستخدمة بحالة جيدة",
+    "CO2 System in good condition": "نظام الإطفاء غاز ثاني أكسيد الكربون بحاله جيده",
+    "Is the diesel tank checked?": "هل يتم فحص خزان الديزل",
+    "Is there an oil leak?": "يوجد تسريب للزيوت",
+    "Glass break alarm system is in good condition":"نظام اإلنذار بكسر الزجاج بحالة جيدة",
+    "breakersfm":"قواطع FM200"
 }
