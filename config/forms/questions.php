@@ -128,7 +128,7 @@ return [
         ],
 
         "fire_sprinklers" => [
-            // "Water Pressure at highest point at network" => "وﺿﻊ اﻟرﺷﺎﺷﺎت",
+            "Water Pressure at highest point at network" => "وﺿﻊ اﻟرﺷﺎﺷﺎت",
             "Leakage" => "هل يوجد ترسيب",
             "Rust" => "الصدأ"
         ],
