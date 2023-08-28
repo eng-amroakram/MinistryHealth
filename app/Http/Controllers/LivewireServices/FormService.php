@@ -4,14 +4,17 @@ namespace App\Http\Controllers\LivewireServices;
 
 use App\Http\Controllers\Controller;
 use App\Models\Answer;
+use App\Models\User;
 
 class FormService extends Controller
 {
     public function store($solution, $form_id, $notes)
     {
-        $user = auth()->user();
+        $user = User::find(auth()->id());
+
         $solution['name_ar'] = $user->name;
         $solution['inspector_name'] = $user->name;
+        $solution['signature_image'] = $user->signature;
         $solution['date'] = now()->format('Y-m-d');
 
         Answer::create([
@@ -24,3 +27,4 @@ class FormService extends Controller
         return true;
     }
 }
+

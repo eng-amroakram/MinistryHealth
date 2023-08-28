@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('employee_number')->unique()->nullable();
             $table->string('id_number')->unique()->nullable();
             $table->string('job_title')->nullable();
+            $table->string('signature')->nullable();
             $table->enum('type', ['superadmin', 'admin', 'employee']);
             $table->string('password');
             $table->softDeletes();

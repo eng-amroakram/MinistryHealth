@@ -30,6 +30,8 @@ Route::controller(ViewController::class)->prefix('/')->as('web.')->group(functio
     Route::middleware(['auth', 'web'])->group(function () {
         Route::get('forms/{type?}/', 'forms')->name('forms');
         Route::get('forms/u/{employee}', 'employeeForms')->name('employee.forms');
+        Route::get('signature', 'signature')->name('signature');
+        Route::post('signature', 'signatureUpload')->name('signature');
         Route::get('logout', 'logout')->name('logout');
     });
 });

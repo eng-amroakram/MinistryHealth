@@ -18,6 +18,16 @@
                         {{ $employee->employee_number }}
                     </h4>
 
+                    {{-- button to download image --}}
+
+                    <button type="button" rel="tooltip" class="btn btn-success mb-3" wire:click="downloadSignature">
+                        <i class="tim-icons icon-cloud-download-93"></i>
+
+                        تحميل توقيع الموظف
+                    </button>
+
+
+
                 </div>
             </div>
         </div>

@@ -29,13 +29,24 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item monthly_complaints">
+                            <li class="nav-item monthly_complaints" style="margin-right: 7px;">
                                 <a class="nav-link "
                                     href="{{ route('web.forms', ['type' => 'monthly_checks']) }}#monthly_checks"
                                     style="font-weight: bold;color: rgb(0,0,0);background: #66c857;">
                                     التشيكات الشهرية
                                 </a>
                             </li>
+
+                            @auth
+                                @if (!auth()->user()->signature)
+                                    <li class="nav-item monthly_complaints">
+                                        <a class="nav-link " href="{{ route('web.signature') }}"
+                                            style="font-weight: bold;color: rgb(0,0,0);background: #c85757;">
+                                            قم بالتوقيع هنا
+                                        </a>
+                                    </li>
+                                @endif
+                            @endauth
 
                         </ul>
                     </div>
@@ -297,6 +308,3 @@
 
 
 </section>
-
-
-

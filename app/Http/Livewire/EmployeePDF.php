@@ -32,6 +32,8 @@ class EmployeePDF extends Component
         $pdfService = new PDFService();
         $data = $answer->solutions;
         $data['date'] = $answer->created_at->format("Y-m-d");
+
+        $data['signature_image'] = public_path("upload/64ebaa47be8b0.png");
         $name = $pdfService->fillPdf($data, $answer->form);
 
         $path = 'pdf-viewer/web/viewer.html?file=pdfs/' . $name;
@@ -52,5 +54,14 @@ class EmployeePDF extends Component
         return view('livewire.employee-p-d-f', [
             'solutions' => $solutions
         ]);
+    }
+
+    public function downloadSignature()
+    {
+        $signature = $this->employee->signature;
+
+        if ($signature) {
+            return response()->download(public_path("upload/" . $signature));
+        }
     }
 }
