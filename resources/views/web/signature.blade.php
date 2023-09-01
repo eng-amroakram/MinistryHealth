@@ -47,6 +47,16 @@
                         <h5>Ministry Health Signature Pad</h5>
                     </div>
 
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @elseif(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
                     <div class="card-body">
 
                         <form method="POST" action="{{ route('web.signature') }}">
