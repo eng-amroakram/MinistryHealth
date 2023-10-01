@@ -166,7 +166,6 @@
                             </x-forms.fire_hoses>
                         @endif
 
-
                         @if (in_array($form->name, ['emergency_headlamps']))
                             <x-forms.emergency_headlamps :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form">
                             </x-forms.emergency_headlamps>
@@ -218,7 +217,12 @@
     </div>
 
 
+
     {{-- <x-tab :colmuns="config('forms.filesconfig.columns.' . $form->name) ?? []" :form="$form" :count="1" :stat="$stat"></x-tab> --}}
+
+
+
+
     @push('employee_script')
         <script>
             $(document).ready(function() {

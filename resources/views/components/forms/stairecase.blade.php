@@ -1,13 +1,14 @@
 <div class="table-responsive text-center" style="width: 100%; border-color: rgb(0,0,0);" wire:ignore.self>
     <div class="d-flex justify-content-center">
         <strong>NA:</strong><span style="font-size: large; margin-right: 20px;">غير مطلوب</span>
-        <strong>NM:</strong><span style="font-size: large; margin-right: 20px;">غير مطابق</span>
-        <strong>PM:</strong><span style="font-size: large; margin-right: 20px;">مطابق جزئياً</span>
-        <strong>FM:</strong><span style="font-size: large; margin-right: 20px;">مطابق</span>
+        <strong>Yes:</strong><span style="font-size: large; margin-right: 20px;">نعم</span>
+        <strong>No:</strong><span style="font-size: large; margin-right: 20px;">لا</span>
     </div>
 
     <h3 style="text-align: right;">{{ __($form->name) }}</h3>
+
     <table class="table table-bordered" wire:ignore.self>
+
         <thead>
             <tr>
                 @foreach ($colmuns as $colmun)
@@ -15,10 +16,13 @@
                 @endforeach
             </tr>
         </thead>
+
         <tbody>
+
             @php
                 $count = 1;
             @endphp
+
             @foreach ($form->questions as $question)
                 <tr>
                     <td>{{ $count }}</td>
@@ -26,49 +30,29 @@
 
                     <td>
                         <x-field type="checkbox" dir=""
-                            class="checkboxfield {{ $form->name }}_{{ $count }}" name="fm_{{ $count }}"
-                            reversone="pm_{{ $count }}" reverstwo="nm_{{ $count }}"
-                            reversthree="na_{{ $count }}" form="{{ $form->name }}_{{ $count }}"
-                            id="{{ $form->name }}_fm_{{ $count }}" placeholder="">
+                            class="checkboxfield {{ $form->name }}_{{ $count }}" name="yes_{{ $count }}"
+                            reversone="no_{{ $count }}" reverstwo="na_{{ $count }}"
+                            form="{{ $form->name }}_{{ $count }}"
+                            id="{{ $form->name }}_yes_{{ $count }}" placeholder="">
                         </x-field>
-
                     </td>
 
                     <td>
-
                         <x-field type="checkbox" dir=""
                             class="checkboxfield {{ $form->name }}_{{ $count }}"
-                            name="pm_{{ $count }}" reversone="fm_{{ $count }}"
-                            reverstwo="nm_{{ $count }}" reversthree="na_{{ $count }}"
-                            form="{{ $form->name }}_{{ $count }}"
-                            id="{{ $form->name }}_pm_{{ $count }}" placeholder="">
+                            name="no_{{ $count }}" reversone="yes_{{ $count }}"
+                            reverstwo="na_{{ $count }}" form="{{ $form->name }}_{{ $count }}"
+                            id="{{ $form->name }}_no_{{ $count }}" placeholder="">
                         </x-field>
-
-
                     </td>
 
                     <td>
-
                         <x-field type="checkbox" dir=""
                             class="checkboxfield {{ $form->name }}_{{ $count }}"
-                            name="nm_{{ $count }}" reversone="fm_{{ $count }}"
-                            reverstwo="pm_{{ $count }}" reversthree="na_{{ $count }}"
-                            form="{{ $form->name }}_{{ $count }}"
-                            id="{{ $form->name }}_nm_{{ $count }}" placeholder="">
-                        </x-field>
-
-                    </td>
-
-                    <td>
-
-                        <x-field type="checkbox" dir=""
-                            class="checkboxfield {{ $form->name }}_{{ $count }}"
-                            name="na_{{ $count }}" reversone="fm_{{ $count }}"
-                            reverstwo="pm_{{ $count }}" reversthree="nm_{{ $count }}"
-                            form="{{ $form->name }}_{{ $count }}"
+                            name="na_{{ $count }}" reversone="yes_{{ $count }}"
+                            reverstwo="no_{{ $count }}" form="{{ $form->name }}_{{ $count }}"
                             id="{{ $form->name }}_na_{{ $count }}" placeholder="">
                         </x-field>
-
                     </td>
 
                     <td id="tdstyleright">{{ __("$question->question") }}</td>

@@ -15,6 +15,7 @@
 
             @while ($count < 12)
                 <tr>
+
                     <td>
                         <x-field type="text" dir="rtl" class="textfield"
                             name="lift_operation_condition_{{ $count }}" form="{{ $form->name }}"
@@ -29,12 +30,12 @@
                         </x-field>
                     </td>
 
-                    <td>
+                    {{-- <td>
                         <x-field type="text" dir="rtl" class="textfield" name="battery_{{ $count }}"
                             form="{{ $form->name }}" id="{{ $form->name }}_battery_{{ $count }}"
                             placeholder="">
                         </x-field>
-                    </td>
+                    </td> --}}
 
                     <td>
                         <x-field type="text" dir="rtl" class="textfield"

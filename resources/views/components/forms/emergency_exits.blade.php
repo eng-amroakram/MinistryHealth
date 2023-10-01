@@ -12,7 +12,7 @@
             @php
                 $count = 1;
             @endphp
-            @while ($count < 19)
+            @while ($count < 13)
                 <tr>
                     <td>
                         <x-field type="text" dir="rtl" class="textfield" name="notes_{{ $count }}"
@@ -21,8 +21,30 @@
                     </td>
 
                     <td>
+                        <x-field type="text" dir="rtl" class="textfield" name="obstructed_{{ $count }}"
+                            form="{{ $form->name }}" id="{{ $form->name }}_obstructed_{{ $count }}"
+                            placeholder="">
+                        </x-field>
+                    </td>
+
+                    <td>
+                        <x-field type="text" dir="rtl" class="textfield" name="resistance_{{ $count }}"
+                            form="{{ $form->name }}" id="{{ $form->name }}_resistance_{{ $count }}"
+                            placeholder="">
+                        </x-field>
+                    </td>
+
+                    <td>
+                        <x-field type="text" dir="rtl" class="textfield" name="flush_{{ $count }}"
+                            form="{{ $form->name }}" id="{{ $form->name }}_flush_{{ $count }}"
+                            placeholder="">
+                        </x-field>
+                    </td>
+
+                    <td>
                         <x-field type="text" dir="rtl" class="textfield" name="door_{{ $count }}"
-                            form="{{ $form->name }}" id="{{ $form->name }}_door_{{ $count }}" placeholder="">
+                            form="{{ $form->name }}" id="{{ $form->name }}_door_{{ $count }}"
+                            placeholder="">
                         </x-field>
                     </td>
 

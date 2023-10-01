@@ -13,16 +13,15 @@
                 $count = 1;
             @endphp
             @while ($count < 13)
-
                 <tr>
-                    <td>
+                    {{-- <td>
                         <select class="selectfield" form="{{ $form->name }}" name="weight_{{ $count }}"
                             id="{{ $form->name }}_weight_{{ $count }}" id="weight_{{ $count }}">
                             <option value="">لا شيء</option>
                             <option value="✔️">✔️</option>
                             <option value="❌">❌</option>
                         </select>
-                    </td>
+                    </td> --}}
 
                     <td>
                         <select class="selectfield" form="{{ $form->name }}" name="pressure_{{ $count }}"
@@ -33,14 +32,14 @@
                         </select>
                     </td>
 
-                    <td>
+                    {{-- <td>
                         <select class="selectfield" form="{{ $form->name }}" name="gauge_{{ $count }}"
                             id="{{ $form->name }}_gauge_{{ $count }}" id="gauge_{{ $count }}">
                             <option value="">لا شيء</option>
                             <option value="✔️">✔️</option>
                             <option value="❌">❌</option>
                         </select>
-                    </td>
+                    </td> --}}
 
                     <td>
                         <select class="selectfield" form="{{ $form->name }}" name="hose_{{ $count }}"
@@ -52,8 +51,8 @@
                     </td>
 
                     <td>
-                        <select class="selectfield" form="{{ $form->name }}" name="pin_{{ $count }}"
-                            id="{{ $form->name }}_pin_{{ $count }}" id="pin_{{ $count }}">
+                        <select class="selectfield" form="{{ $form->name }}" name="pin_seal_{{ $count }}"
+                            id="{{ $form->name }}_pin_seal_{{ $count }}" id="pin_seal_{{ $count }}">
                             <option value="">لا شيء</option>
                             <option value="✔️">✔️</option>
                             <option value="❌">❌</option>
@@ -61,17 +60,27 @@
                     </td>
 
                     <td>
-                        <select class="selectfield" form="{{ $form->name }}" name="cylinder_{{ $count }}"
-                            id="{{ $form->name }}_cylinder_{{ $count }}" id="cylinder_{{ $count }}">
+                        <select class="selectfield" form="{{ $form->name }}" name="cyliner_{{ $count }}"
+                            id="{{ $form->name }}_cyliner_{{ $count }}" id="cyliner_{{ $count }}">
                             <option value="">لا شيء</option>
                             <option value="✔️">✔️</option>
                             <option value="❌">❌</option>
                         </select>
                     </td>
 
-                    <td>
+                    {{-- <td>
                         <select class="selectfield" form="{{ $form->name }}" name="cabinet_{{ $count }}"
                             id="{{ $form->name }}_cabinet_{{ $count }}" id="cabinet_{{ $count }}">
+                            <option value="">لا شيء</option>
+                            <option value="✔️">✔️</option>
+                            <option value="❌">❌</option>
+                        </select>
+                    </td> --}}
+
+                    <td>
+                        <select class="selectfield" form="{{ $form->name }}" name="fundation_{{ $count }}"
+                            id="{{ $form->name }}_fundation_{{ $count }}"
+                            id="fundation_{{ $count }}">
                             <option value="">لا شيء</option>
                             <option value="✔️">✔️</option>
                             <option value="❌">❌</option>

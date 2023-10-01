@@ -17,20 +17,20 @@
                     {{-- <td>{{ $count }}</td>
                     <td id="tdstyleleft">{{ $question->question }}</td> --}}
 
-                    <td>
+                    {{-- <td>
                         <x-field type="checkbox" dir=""
                             class="checkboxfield {{ $form->name }}_{{ $count }}" name="na_{{ $count }}"
                             reversone="yes_{{ $count }}" reverstwo="no_{{ $count }}"
                             form="{{ $form->name }}_{{ $count }}"
                             id="{{ $form->name }}_na_{{ $count }}" placeholder="">
                         </x-field>
-                    </td>
+                    </td> --}}
 
                     <td>
                         <x-field type="checkbox" dir=""
-                            class="checkboxfield {{ $form->name }}_{{ $count }}"
-                            name="no_{{ $count }}" reversone="yes_{{ $count }}"
-                            reverstwo="na_{{ $count }}" form="{{ $form->name }}_{{ $count }}"
+                            class="checkboxfield {{ $form->name }}_{{ $count }}" name="no_{{ $count }}"
+                            reversone="yes_{{ $count }}" reverstwo="na_{{ $count }}"
+                            form="{{ $form->name }}_{{ $count }}"
                             id="{{ $form->name }}_no_{{ $count }}" placeholder="">
                         </x-field>
                     </td>
