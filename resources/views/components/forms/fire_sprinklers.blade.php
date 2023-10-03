@@ -22,14 +22,14 @@
                         <select class="selectfield" form="{{ $form->name }}"
                             id="{{ $form->name }}_status_{{ $count }}"name="status_{{ $count }}"
                             id="status_{{ $count }}">
-                            <option value="">لا شيء</option>
+                            <option value="">غير مطلوب</option>
                             <option
-                                value="{{ $question->question == 'Water Pressure at highest point at network' ? 'سليم' : 'يوجد' }}">
-                                {{ $question->question == 'Water Pressure at highest point at network' ? 'سليم' : 'يوجد' }}
+                                value="{{ $question->question == 'Water Pressure at highest point at network' ? 'سليم' : 'سليم' }}">
+                                {{ $question->question == 'Water Pressure at highest point at network' ? 'سليم' : 'سليم' }}
                             </option>
                             <option
-                                value="{{ $question->question == 'Water Pressure at highest point at network' ? 'غير سليم' : 'لا يوجد' }}">
-                                {{ $question->question == 'Water Pressure at highest point at network' ? 'غير سليم' : 'لا يوجد' }}
+                                value="{{ $question->question == 'Water Pressure at highest point at network' ? 'غير سليم' : 'غير سليم' }}">
+                                {{ $question->question == 'Water Pressure at highest point at network' ? 'غير سليم' : 'غير سليم' }}
                             </option>
                         </select>
 
